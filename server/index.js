@@ -13,7 +13,9 @@ import mongoose from "mongoose";
 
 //data importing
 import User from './models/User.js'
-import {dataUser} from './data/index.js'
+import Products from './models/Products.js'
+import ProductStat from './models/ProductStat.js'
+import {dataUser, dataProduct, dataProductStat} from './data/index.js'
 
 //configuration
 
@@ -43,4 +45,6 @@ mongoose.connect(process.env.MONGO_URL, {
     app.listen(PORT, ()=>{console.log(`Server listening on port : ${PORT} `)})
     /* add only once to remove duplicates */
     // User.insertMany(dataUser);
+    // ProductStat.insertMany(dataProductStat);
+    // Products.insertMany(dataProduct);
 }).catch((error)=>{console.log(`${error} did not connect`)})
